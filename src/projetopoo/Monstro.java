@@ -7,14 +7,14 @@ package projetopoo;
 
 public class Monstro {
 	protected String nome;
-	protected int HP;
-	protected int MaxHP;
-	protected int EXP;
-	protected int ATK;
-	private static boolean derrota;
+	protected int HP; // HP que sera modificado em combate
+	protected int MaxHP; //HP maximo
+	protected int EXP; //EXP que sera obtida pelo jogador
+	protected int ATK; //Ataque do monstro
+	private static boolean derrota; // Condicao estatica que define se inimigo foi derrotado
 	
 	public Monstro() {
-		Monstro.derrota = false;
+		Monstro.derrota = false; // Construtor define monstro como nao-derrotado
 	}
 	
 	public String getNome() {
@@ -55,7 +55,8 @@ public class Monstro {
 	public static void setDerrota(boolean derrota) {
 		Monstro.derrota = derrota;
 	}
-
+	
+	//Descreve os atributos do inimigo
 	public void Descricao() {
 		System.out.println();
 		System.out.println(this.getNome()+":");
@@ -64,15 +65,18 @@ public class Monstro {
 		System.out.println("EXP: "+this.getEXP());
 		System.out.println();
 	}
+	//Metodo que calcula o dano levado pelo inimigo e subtrai o HP
 	public void tomaDano(int dano) {
 		System.out.println(this.getNome()+ " tomou "+dano+" de dano!");
 		this.setHP(this.getHP()-dano);
 	}
+	//Metodo que verifica se inimigo foi derrotado ou nao
 	public void verificaStatus() {
 		if (this.getHP() <= 0) {
 			Monstro.setDerrota(true);
 		}
 	}
+	//Metodo que verifica somente o HP do inimigo
 	public void verHP() {
 		System.out.println(this.getNome()+"esta com "+this.getHP()+" HP");
 	}

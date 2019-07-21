@@ -1,12 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package projetopoo;
 
 public class Bestiario {
-	private Monstro[] bestiario = new Monstro[5];
+	private Monstro[] bestiario = new Monstro[5]; //Espaco para 5 monstros. Pode conter mais
+	
+	//Matriz de nomes de monstros.
+	//Sera gerado um monstro por linha, definido aleatoriamente dentre os disponiveis nas colunas
+	//Monstros da esquerda para a direita e de cima para baixo são mais fortes.
+	//Semelhante a um Roguelike.
+	//Exemplo: Sera invocado um Orc OU um Goblin OU um bruxo na primeira rodada.
 	private String[][] nomes = {{"Orc", "Goblin", "Bruxo"},
 						{"Niffth","Dragao","Medusa"},
 						{"Serpente","Zumbi","High Tech Dracula"},
@@ -14,25 +16,33 @@ public class Bestiario {
 						{"Espirito Perdido", "Pudim de Passas", "The Rosetta"}
 						};
 	
+	//Construtor Bestiario, ira definir os monstros da partida.
+	//Cada partida sera um monstro diferente com atributos diferentes, gerados aleatoriamente
 	public Bestiario() {
 		int j;
 		for (int i = 0;i<5;i++) {
 			Monstro monstro = new Monstro();
-			j = (int)((Math.random()*3)+1);
-			monstro.setNome(nomes[i][j-1]);
-			monstro.setHP((50*j)+(i*20));
+			j = (int)((Math.random()*3)+1); //Fator de Aleatoriedade, de 1 a 3. Qto maior, mais forte o inimigo
+			monstro.setNome(nomes[i][j-1]); //Define os nomes de acordo com o fator de Aleatoriedade
+			monstro.setHP((50*j)+(i*20)); //HP = MaxHP
 			monstro.setMaxHP((50*j)+(i*20));
-			monstro.setATK((3*j)+(i*3));
-			monstro.setEXP(10 + (i*j*10));
-			this.bestiario[i] = monstro;
+			monstro.setATK((3*j)+(i*3)); //Ataque do monstro, definido por j
+			monstro.setEXP(10 + (i*j*10)); // EXP do monstro, definido por j.
+			this.bestiario[i] = monstro; // Add monstro gerado ao bestiario
 		}
 	}
+	
+	//Metodo que descreve o monstro contido no bestiario
 	public void VerificaMonstro(int i) {
 		this.bestiario[i].Descricao();
 	}
+	
+	//Invoca o monstro para uso (combate, etc.)
 	public Monstro Summon(int i) {
 		return bestiario[i];
 	}
+	
+	//Retorna somente o nome do inimigo
 	public String getBestNome(int i) {
 		return bestiario[i].nome;
 	}

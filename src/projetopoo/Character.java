@@ -5,9 +5,9 @@
  */
 package projetopoo;
 
-public class Character extends Monstro {
-	int nivel;
-	private static boolean derrota;
+public class Character extends Monstro { //Heranca de monstros. Herois tambem sao monstros por dentro =)
+	int nivel; //nivel atual do heroi
+	private static boolean derrota; //Condicao que determina se jogador foi derrotado
 	
 	public Character() {
 		this.nivel = 1;
@@ -29,6 +29,7 @@ public class Character extends Monstro {
 		Character.derrota = derrota;
 	}
 
+	//Da descricao detalhada de heroi
 	public void Descricao() {
 		System.out.println(this.getNome()+":");
 		System.out.println("MaxHP: "+this.getMaxHP());

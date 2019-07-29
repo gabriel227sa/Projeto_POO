@@ -6,13 +6,13 @@ public class Bestiario {
 	
 	//Matriz de nomes de monstros.
 	//Sera gerado um monstro por linha, definido aleatoriamente dentre os disponiveis nas colunas
-	//Monstros da esquerda para a direita e de cima para baixo são mais fortes.
+	//Monstros da esquerda para a direita e de cima para baixo sao mais fortes.
 	//Semelhante a um Roguelike.
 	//Exemplo: Sera invocado um Orc OU um Goblin OU um bruxo na primeira rodada.
 	private String[][] nomes = {{"Orc", "Goblin", "Bruxo"},
 						{"Niffth","Dragao","Medusa"},
 						{"Serpente","Zumbi","High Tech Dracula"},
-						{"Dragão Branco", "Dragão Vermelho", "Dragão Macabro"},
+						{"Dragao Branco", "Dragao Vermelho", "Dragao Macabro"},
 						{"Espirito Perdido", "Pudim de Passas", "The Rosetta"}
 						};
 	
@@ -24,10 +24,9 @@ public class Bestiario {
 			Monstro monstro = new Monstro();
 			j = (int)((Math.random()*3)+1); //Fator de Aleatoriedade, de 1 a 3. Qto maior, mais forte o inimigo
 			monstro.setNome(nomes[i][j-1]); //Define os nomes de acordo com o fator de Aleatoriedade
-			monstro.setHP((50*j)+(i*20)); //HP = MaxHP
-			monstro.setMaxHP((50*j)+(i*20));
+			monstro.setHP((15*j)+(i*20)); //HP = MaxHP
+			monstro.setMaxHP((15*j)+(i*20));
 			monstro.setATK((3*j)+(i*3)); //Ataque do monstro, definido por j
-			monstro.setEXP(10 + (i*j*10)); // EXP do monstro, definido por j.
 			this.bestiario[i] = monstro; // Add monstro gerado ao bestiario
 		}
 	}

@@ -9,7 +9,6 @@ public class Monstro {
 	protected String nome;
 	protected int HP; // HP que sera modificado em combate
 	protected int MaxHP; //HP maximo
-	protected int EXP; //EXP que sera obtida pelo jogador
 	protected int ATK; //Ataque do monstro
 	private static boolean derrota; // Condicao estatica que define se inimigo foi derrotado
 	
@@ -35,12 +34,7 @@ public class Monstro {
 	public void setMaxHP(int maxHP) {
 		MaxHP = maxHP;
 	}
-	public int getEXP() {
-		return EXP;
-	}
-	public void setEXP(int eXP) {
-		EXP = eXP;
-	}
+	
 	public int getATK() {
 		return ATK;
 	}
@@ -62,7 +56,6 @@ public class Monstro {
 		System.out.println(this.getNome()+":");
 		System.out.println("MaxHP: "+this.getMaxHP());
 		System.out.println("ATK: "+this.getATK());
-		System.out.println("EXP: "+this.getEXP());
 		System.out.println();
 	}
 	//Metodo que calcula o dano levado pelo inimigo e subtrai o HP
@@ -78,6 +71,6 @@ public class Monstro {
 	}
 	//Metodo que verifica somente o HP do inimigo
 	public void verHP() {
-		System.out.println(this.getNome()+"esta com "+this.getHP()+" HP");
+		System.out.println(this.getNome()+" esta com "+this.getHP()+" HP\n");
 	}
 }

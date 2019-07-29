@@ -14,7 +14,7 @@ public class Professor extends PerfisDeAcesso {
     private int escolha;
     Scanner scan = new Scanner(System.in);
 
-    // Construtor da classe, que imprime o menu de opções do perfil professor.
+    // Construtor da classe, que imprime o menu de opcoes do perfil professor.
     public Professor(Herois herois) {
         do {
             System.out.println("\n           ================================");
@@ -46,15 +46,15 @@ public class Professor extends PerfisDeAcesso {
                     break;
                 }
                 default:
-                    System.out.println("**Escolha uma opção válida!**");
+                    System.out.println("**Escolha uma opcao valida!**");
             }
         } while (escolha != 0);
     }
 
-    // Método que adiciona os alunos aos slots de herois.
+    // Metodo que adiciona os alunos aos slots de herois.
     public void adicionarAlunos(Herois herois) {
         char continua = 'S';
-        //Imprime todos os slots de herói que estão disponíveis ou não.
+        //Imprime todos os slots de heroi que estao disponiveis ou nao.
         herois.ListaChar();
         while (continua == 'S') {
             //Cria um perfil de heroi para o aluno.
@@ -65,7 +65,7 @@ public class Professor extends PerfisDeAcesso {
         herois.ListaChar();
     }
 
-    // Método que remove os alunos dos slots de herois.
+    // Metodo que remove os alunos dos slots de herois.
     public void removerAlunos(Herois herois) {
         char continua = 'S';
 
@@ -78,36 +78,36 @@ public class Professor extends PerfisDeAcesso {
         herois.ListaChar();
     }
 
-    // Método que adciona palavras baseada no idioma escolhido.
+    // Metodo que adciona palavras baseada no idioma escolhido.
     //arrumar.....
     public void adicionarPalavras(Herois herois) {
         do {
             System.out.println("\n           ================================");
             System.out.println("           |     Escolha o idioma:        |");
             System.out.println("           |                              |");
-            System.out.println("           |     1 - Inglês               |");
-            System.out.println("           |     2 - Alemão               |");
+            System.out.println("           |     1 - Ingles               |");
+            System.out.println("           |     2 - Alemao               |");
             System.out.println("           |     3 - Espanhol             |");
-            System.out.println("           |     4 - Francês              |");            
+            System.out.println("           |     4 - Frances              |");            
             System.out.println("           |     5 - Voltar.              |");
             System.out.println("           |     0 - Fechar Programa.     |");
             System.out.printf("           ================================\n>> ");
             escolha = scan.nextInt();
             switch (escolha) {
                 case 1:
-                    // exibir as palavras já adicionadas
+                    // exibir as palavras jÃ¡ adicionadas
                     //arrumar dicionario para as linguagem
                     break;
                 case 2:
-                    // exibir as palavras já adicionadas
+                    // exibir as palavras jÃ¡ adicionadas
                     //arrumar dicionario para as linguagem
                     break;
                 case 3:
-                    // exibir as palavras já adicionadas
+                    // exibir as palavras jÃ¡ adicionadas
                     //arrumar dicionario para as linguagem
                     break;
                 case 4:
-                    // exibir as palavras já adicionadas
+                    // exibir as palavras jÃ¡ adicionadas
                     //arrumar dicionario para as linguagem
                     break;
                 case 5: {
@@ -120,17 +120,17 @@ public class Professor extends PerfisDeAcesso {
         } while (escolha != 0);
     }
 
-    // Método que remove palavra baseada no idioma escolhido
+    // Metodo que remove palavra baseada no idioma escolhido
     //arrumar....
     public void removerPalavras() {
-        // criar função para remover palavras
+        // criar funcao para remover palavras
         System.out.println("\n           ================================");
         System.out.println("           |     Escolha o idioma:        |");
         System.out.println("           |                              |");
-        System.out.println("           |     1 - Inglês               |");
-        System.out.println("           |     2 - Alemão               |");
+        System.out.println("           |     1 - Ingles               |");
+        System.out.println("           |     2 - Alemao               |");
         System.out.println("           |     3 - Espanhol             |");
-        System.out.println("           |     4 - Francês              |");
+        System.out.println("           |     4 - Frances              |");
         System.out.println("           |     5 - Voltar.              |");
         System.out.println("           |     0 - Fechar Programa.     |");
         System.out.printf("           ================================\n>> ");

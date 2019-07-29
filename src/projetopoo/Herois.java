@@ -27,7 +27,6 @@ public class Herois {
         hero.HP = 50;
         hero.MaxHP = 50;
         hero.ATK = (int) (Math.random() * 5) + 10; // ataque inicial randomico de 10 a 14
-        hero.EXP = 0;
         this.herois[i] = hero;
     }
 
@@ -38,7 +37,7 @@ public class Herois {
         //Usuario introduz numero de slot
         int selecao = scanner.nextInt();
         if(selecao < 0 || selecao > 8){
-            System.out.println("Slot não disponível!");
+            System.out.println("Slot nÃ£o disponÃ­vel!");
             System.exit(0);
         }
         if (this.herois[selecao] == null) {
@@ -50,8 +49,8 @@ public class Herois {
         }        
     }
 
-    //  Metodo que recebe o nome do aluno e retorna a posição no slot de 
-    //herois, caso não esteja no vetor retorna -1.
+    //  Metodo que recebe o nome do aluno e retorna a posiÃ§Ã£o no slot de 
+    //herois, caso nÃ£o esteja no vetor retorna -1.
     public int verificaAluno(String aluno) {
         int verifica = -1;
         for (int i = 0; i < 9; i++) {
@@ -69,7 +68,7 @@ public class Herois {
         //Usuario introduz numero de slot
         int selecao = scanner.nextInt();
         if(selecao < 0 || selecao > 8){
-            System.out.printf("**Slot não disponível!");
+            System.out.printf("**Slot nÃ£o disponÃ­vel!");
             delete();
         }
         else if (this.herois[selecao] != null) {
@@ -94,6 +93,14 @@ public class Herois {
                 System.out.println("Slot " + i + ": " + herois[i].getNome());
             } else {
                 System.out.println("Slot " + i + ": Vazio");
+            }
+        }
+    }
+    public void showScores() {
+    	System.out.println("****RECORDES****");
+    	for (int i = 0; i < 9; i++) {
+            if (herois[i] != null) {
+                System.out.println("| "+herois[i].getNome()+" -> Nivel "+herois[i].getMaxNivel());
             }
         }
     }

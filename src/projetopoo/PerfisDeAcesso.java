@@ -11,7 +11,7 @@ public class PerfisDeAcesso {
     private int numero;
     private String senha;
 
-    // Método que imprime o menu inicial.
+    // Metodo que imprime o menu inicial.
     public void menuDeAcesso(Herois herois) {
         System.out.println("\n           =============================================");
         System.out.println("           |     Perfil de Acesso Aluno ou professor?  |");
@@ -21,35 +21,35 @@ public class PerfisDeAcesso {
         System.out.println("           |     0 - Fechar Programa.                  |");
         System.out.printf("           =============================================\n>> ");
         numero = scan.nextInt();
-        // É chamado o método para o acesso ao perfil de aluno ou professor.
+        // Eh chamado o metodo para o acesso ao perfil de aluno ou professor.
         usuario(herois);
     }
 
-    // Método que retorna o numero de acesso escolhido pelo usuário.
+    // Metodo que retorna o numero de acesso escolhido pelo usuario.
     public int retornaNumero() {
         return numero;
     }
 
-    // Método que recebe os herois e chama o perfil de acordo com a escolha do usuário.
+    // Metodo que recebe os herois e chama o perfil de acordo com a escolha do usuario.
     public void usuario(Herois herois) {
         if (this.numero == 1) {
-            // É criado um novo perfil de professor.            
+            // Eh criado um novo perfil de professor.            
             System.out.printf("**Perfil restrito! Digite a senha para continuar :\n>> ");
             senha = scan.next();
             //Para o acesso ao perfil de professor deve-se acertar a senha.
             if (senha.equals("PROFESSOR")) {
                 new Professor(herois);
             } else {
-                System.out.println("**Escolha uma opção válida!**");
+                System.out.println("**Escolha uma opcao valida!**");
                 menuDeAcesso(herois);
             }
         } else if (this.numero == 2) {
-            // É criado um novo perfil de aluno.
+            // Eh criado um novo perfil de aluno.
             new Aluno(herois);
         } else if (this.numero == 0) {
             System.exit(0);
         } else {
-            System.out.println("**Escolha uma opção válida!**");
+            System.out.println("**Escolha uma opcao valida!**");
             menuDeAcesso(herois);
         }
     }

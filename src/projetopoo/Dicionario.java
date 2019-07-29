@@ -13,32 +13,32 @@ public class Dicionario {
 
     //Metodo construtor que ja contem palavras pre-definidas
     public Dicionario() {
-        dicionario[0] = new Palavra("Stuhl", "Cadeira", "Der", 1);
-        dicionario[1] = new Palavra("Tafel", "Lousa", "Die", 1);
-        dicionario[2] = new Palavra("Ball", "Bola", "Der", 2);
-        dicionario[3] = new Palavra("Mann", "Homem", "Der", 2);
-        dicionario[4] = new Palavra("Sonne", "Sol", "Die", 2);
-        dicionario[5] = new Palavra("Frau", "Mulher", "Die", 2);
-        dicionario[6] = new Palavra("Buch", "Livro", "Das", 2);
-        dicionario[7] = new Palavra("Wasser", "Agua", "Das", 2);
-        dicionario[8] = new Palavra("Tisch", "Mesa", "Der", 2);
-        dicionario[9] = new Palavra("Affe", "Macaco", "Der", 2);
-        dicionario[10] = new Palavra("Haus", "Casa", "Das", 2);
-        dicionario[11] = new Palavra("Kopf", "Cabeça", "Der", 2);
-        dicionario[12] = new Palavra("Blume", "Flor", "Die", 2);
-        dicionario[13] = new Palavra("Wein", "Vinho", "Der", 2);
-        dicionario[14] = new Palavra("Vogel", "Passaro", "Der", 2);
-        dicionario[15] = new Palavra("Katze", "Gato", "Die", 2);
-        dicionario[16] = new Palavra("Orange", "Laranja", "Die", 2);
-        dicionario[17] = new Palavra("Liebe", "Amor", "Die", 2);
-        dicionario[18] = new Palavra("Handy", "Celular", "Das", 2);
-        dicionario[19] = new Palavra("Bier", "Cerveja", "Das", 2);
-        dicionario[20] = new Palavra("Eis", "Sorvete", "Das", 2);
-        dicionario[21] = new Palavra("Geld", "Dinheiro", "Das", 2);
-        dicionario[22] = new Palavra("Herz", "Coração", "Das", 2);
-        dicionario[23] = new Palavra("Brot", "Pão", "Das", 2);
-        dicionario[24] = new Palavra("Bett", "Cama", "Das", 2);
-        dicionario[25] = new Palavra("Fenster", "Janela", "Das", 2);
+        dicionario[0] = new Palavra("Stuhl", "cadeira", "Der", 1);
+        dicionario[1] = new Palavra("Tafel", "lousa", "Die", 1);
+        dicionario[2] = new Palavra("Ball", "bola", "Der", 2);
+        dicionario[3] = new Palavra("Mann", "homem", "Der", 2);
+        dicionario[4] = new Palavra("Sonne", "sol", "Die", 2);
+        dicionario[5] = new Palavra("Frau", "mulher", "Die", 2);
+        dicionario[6] = new Palavra("Buch", "livro", "Das", 2);
+        dicionario[7] = new Palavra("Wasser", "agua", "Das", 2);
+        dicionario[8] = new Palavra("Tisch", "mesa", "Der", 2);
+        dicionario[9] = new Palavra("Affe", "macaco", "Der", 2);
+        dicionario[10] = new Palavra("Haus", "casa", "Das", 2);
+        dicionario[11] = new Palavra("Bild", "quadro", "Das", 2);
+        dicionario[12] = new Palavra("Blume", "flor", "Die", 2);
+        dicionario[13] = new Palavra("Wein", "vinho", "Der", 2);
+        dicionario[14] = new Palavra("Vogel", "passaro", "Der", 2);
+        dicionario[15] = new Palavra("Katze", "gato", "Die", 2);
+        dicionario[16] = new Palavra("Orange", "laranja", "Die", 2);
+        dicionario[17] = new Palavra("Liebe", "amor", "Die", 2);
+        dicionario[18] = new Palavra("Handy", "celular", "Das", 2);
+        dicionario[19] = new Palavra("Bier", "cerveja", "Das", 2);
+        dicionario[20] = new Palavra("Eis", "sorvete", "Das", 2);
+        dicionario[21] = new Palavra("Geld", "dinheiro", "Das", 2);
+        dicionario[22] = new Palavra("Musik", "musica", "Die", 2);
+        dicionario[23] = new Palavra("Schuhe", "sapatos", "Die", 2);
+        dicionario[24] = new Palavra("Bett", "cama", "Das", 2);
+        dicionario[25] = new Palavra("Fenster", "janela", "Das", 2);
 
     }
 

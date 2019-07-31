@@ -37,7 +37,7 @@ public class Herois {
         //Usuario introduz numero de slot
         int selecao = scanner.nextInt();
         if(selecao < 0 || selecao > 8){
-            System.out.println("Slot nÃ£o disponÃ­vel!");
+            System.out.println("Slot nao disponivel!");
             System.exit(0);
         }
         if (this.herois[selecao] == null) {
@@ -54,7 +54,7 @@ public class Herois {
     public int verificaAluno(String aluno) {
         int verifica = -1;
         for (int i = 0; i < 9; i++) {
-            if ((herois[i].getNome()).equals(aluno)) {
+            if ((herois[i] != null) && (herois[i].getNome()).equals(aluno)) {
                 verifica = i;
                 break;
             }
@@ -68,7 +68,7 @@ public class Herois {
         //Usuario introduz numero de slot
         int selecao = scanner.nextInt();
         if(selecao < 0 || selecao > 8){
-            System.out.printf("**Slot nÃ£o disponÃ­vel!");
+            System.out.printf("**Slot nao disponivel!");
             delete();
         }
         else if (this.herois[selecao] != null) {

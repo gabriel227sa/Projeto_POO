@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class PerfisDeAcesso {
 
+	protected static String acesso = "PROFESSOR";
+	
     Scanner scan = new Scanner(System.in);
     private int numero;
     private String senha;
@@ -37,7 +39,7 @@ public class PerfisDeAcesso {
             System.out.printf("**Perfil restrito! Digite a senha para continuar :\n>> ");
             senha = scan.next();
             //Para o acesso ao perfil de professor deve-se acertar a senha.
-            if (senha.equals("PROFESSOR")) {
+            if (senha.equals(this.acesso)) {
                 new Professor(herois);
             } else {
                 System.out.println("**Escolha uma opcao valida!**");

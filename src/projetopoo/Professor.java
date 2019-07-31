@@ -23,7 +23,7 @@ public class Professor extends PerfisDeAcesso {
             System.out.println("           |     1 - Adicionar alunos.    |");
             System.out.println("           |     2 - Remover alunos.      |");
             System.out.println("           |     3 - Selecionar idioma.   |");
-            System.out.println("           |     4 - Mudar Senha          |");
+            System.out.println("           |     4 - Alterar Senha        |");
             System.out.println("           |     5 - Voltar.              |");
             System.out.println("           |     0 - Fechar Programa.     |");
             System.out.printf("           ================================\n>> ");            

@@ -121,5 +121,6 @@ public class Professor extends PerfisDeAcesso {
         System.out.println("Digite a nova senha de perfil de acesso de professor:");
         String novaSenha = scan.next();
         acesso = novaSenha;
+	System.out.println("Senha alterada com sucesso!");
     }
 }

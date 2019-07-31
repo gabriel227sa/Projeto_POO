@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Aluno extends PerfisDeAcesso {
     // Gera o dicionario com as palavras do jogo.
-    Dicionario dicionario = new Dicionario(); 
+     
     Scanner scannner;
     boolean vaiTerCombate = false;
     private int escolha;
@@ -71,8 +71,13 @@ public class Aluno extends PerfisDeAcesso {
     
     public void combate(Herois herois) {
         if (vaiTerCombate) {
-            //Combate
+        	
+        	//Gera as palavras e os monstros no combate
+        	Dicionario dicionario = new Dicionario();
         	Bestiario bestiario = new Bestiario();
+        	
+            //Combate
+        	
             Character player = herois.Summon((herois.verificaAluno(this.nomeAluno)));
             for (int i = 0; i < 5; i++) { //Cada iteracao gera um oponente diferente
             	rodada = i+1;

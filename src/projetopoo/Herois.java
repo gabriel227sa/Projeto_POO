@@ -32,15 +32,16 @@ public class Herois {
 
 	//Metodo que inicia o seletor de slots de heroi (como se fosse um "Load Game).
     //Caso Slot escolhido seja nulo, chama metodo para criar personagem
-    public Character seletor() {
+    public Character seletor() throws NumeroInvalidoException{
         System.out.printf("Qual slot deseja selecionar?\n>> ");
-        //Usuario introduz numero de slot
-        int selecao = scanner.nextInt();
-        if(selecao < 0 || selecao > 8){
-            System.out.println("Slot nao disponivel!");
-            System.exit(0);
+        
+        //Usuario introduz numero de slot.
+        int selecao = NumeroInteiro.RetornaNumeroInteiro();
+        if(selecao < 0 || selecao > 8){            
+            //lanca uma excecao caso seja escolhido um numero invalido.
+            throw new NumeroInvalidoException();
         }
-        if (this.herois[selecao] == null) {
+        else if (this.herois[selecao] == null) {
             this.CriaChar(selecao);
             return herois[selecao];
         } else{
@@ -63,13 +64,13 @@ public class Herois {
     }
 
     // Metodo que deleta um aluno.
-    public void delete() {
+    public void delete() throws NumeroInvalidoException {
         System.out.printf("Qual slot deseja selecionar?\n>> ");
         //Usuario introduz numero de slot
-        int selecao = scanner.nextInt();
-        if(selecao < 0 || selecao > 8){
-            System.out.printf("**Slot nao disponivel!");
-            delete();
+        int selecao = NumeroInteiro.RetornaNumeroInteiro();
+        if(selecao < 0 || selecao > 8){            
+            //lanca uma excecao caso seja escolhido um numero invalido.
+            throw new NumeroInvalidoException();
         }
         else if (this.herois[selecao] != null) {
             this.herois[selecao] = null;
@@ -96,6 +97,8 @@ public class Herois {
             }
         }
     }
+    
+    //Exibe o historico dos melhores jogadores.
     public void showScores() {
     	System.out.println("****RECORDES****");
     	for (int i = 0; i < 9; i++) {

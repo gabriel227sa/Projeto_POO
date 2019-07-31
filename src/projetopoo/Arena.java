@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * ARENA DE COMBATE
  */
 package projetopoo;
 
@@ -13,7 +11,7 @@ public class Arena {
 	Character jogador; //Atributo que contem jogador participante da Arena
 	Monstro inimigo; //Atributo que contem inimigo participante da Arena
 	int dano; //Variavel para calcular dano infrigido ou tomado pelo jogador
-	String status;
+	String status, resposta;
 	
 	//Construtor, invoca jogador e inimigo para a arena
 	public Arena(Character j, Monstro m) {
@@ -29,9 +27,12 @@ public class Arena {
 		System.out.println("Turno do Jogador!!\n");
 		espera(1000);
 		System.out.println("O que significa \""+word.getGenero()+" "+word.getPalavra()+"\"?");
-		System.out.printf(">>");
-		String x = (scanner.next()).toLowerCase(); //Jogador introduz traducao da palavra
-		if (x.equals(word.getTraducao())) { //Caso a palavra esteja correta
+		System.out.printf(">> ");
+                
+                //Jogador digita traducao da palavra.
+		resposta = (scanner.next()).toLowerCase(); 
+                //Caso a palavra esteja correta.
+		if (resposta.equals(word.getTraducao())) { 
 			System.out.println("\nResposta Correta! "+jogador.getNome()+" consegue atingir o inimigo");
 			espera(1000);
 			dano = jogador.getATK()+((int)Math.random()*10); // Inflige dano ao oponente baseado no ATK
@@ -52,10 +53,11 @@ public class Arena {
 		System.out.println("Turno do Inimigo!!\n");
 		espera(1000);
 		System.out.println("O que significa \""+word.getGenero()+" "+word.getPalavra()+"\"?");
-		System.out.printf(">>");
-		String x = (scanner.next()).toLowerCase(); //Jogador introduz palavra
+		System.out.printf(">> ");
+                //Jogador digita a resposta.
+		resposta = (scanner.next()).toLowerCase(); 
 		
-		if (x.equals(word.getTraducao())) { //Caso palavra esteja correta
+		if (resposta.equals(word.getTraducao())) { //Caso palavra esteja correta
 			System.out.println("\nResposta Correta! "+jogador.getNome()+" consegue desviar do golpe");
 			espera(1000);
 		}
@@ -65,13 +67,13 @@ public class Arena {
 			dano = inimigo.getATK()+((int)Math.random()*10); //Dano tomado considera ATK do inimigo
 			jogador.tomaDano(dano);
 		}
-		; //Subtracao do HP no dano levado
+		 //Subtracao do HP no dano levado
 		jogador.verHP(); //Verificacao do HP do jogador
 		jogador.verificaStatus(); //Verificacao se jogador nao sofreu KO (HP <= 0 )
 		espera(1000);
 	}
 	
-	//Permite que o codigo aguarde antes de prosseguir com a sua execucao
+	//Permite que o codigo aguarde antes de prosseguir com a sua execucao.
 	public void espera(int mili) {
 		try {
 		    Thread.sleep(mili);

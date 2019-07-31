@@ -1,14 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 
  */
+
 package projetopoo;
 
-public class Character extends Monstro { //Heranca de monstros. Herois tambem sao monstros por dentro =)
-	int nivel; //nivel atual do heroi
+
+//Heranca de monstros. Herois tambem sao monstros por dentro =).
+public class Character extends Monstro { 
+        //nivel atual do heroi
+	int nivel; 
 	int maxNivel = 0;
-	private static boolean derrota; //Condicao que determina se jogador foi derrotado
+        //Condicao que determina se jogador foi derrotado.
+	private static boolean derrota; 
 	
 	public Character() {
 		this.nivel = 1;
@@ -38,8 +41,7 @@ public class Character extends Monstro { //Heranca de monstros. Herois tambem sa
 		this.maxNivel = maxNivel;
 	}
 
-	//Da descricao detalhada de heroi
-	
+	//Da descricao detalhada de heroi	
 	@Override
 	public void Descricao() {
 		System.out.println(this.getNome()+":");
@@ -49,6 +51,7 @@ public class Character extends Monstro { //Heranca de monstros. Herois tambem sa
 		System.out.println();
 	}
 	
+        //Verifica o status do jogador.
 	@Override
 	public void verificaStatus() {
 		if (this.getHP() <= 0) {
@@ -56,12 +59,14 @@ public class Character extends Monstro { //Heranca de monstros. Herois tambem sa
 		}
 	}
 	
+        //Exibe a pontuacao do jogador.
 	public void Score(int score) {
 		if (score > maxNivel) {
 			maxNivel = score;
 		}
 	}
 	
+        //Reset do nivel.
 	public void reset() {
 		this.HP = MaxHP;
 		this.nivel = 1;

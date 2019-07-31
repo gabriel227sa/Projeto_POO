@@ -1,10 +1,9 @@
 /*
- *
+ * GERENCIA OS PERFIS DE ALUNO E PROFESSOR, EXIBE OS MENUS CORRESPONDENTES.
  *
  *
  *
  */
-
 package projetopoo;
 
 import java.util.Scanner;
@@ -15,7 +14,7 @@ public class Professor extends PerfisDeAcesso {
     Scanner scan = new Scanner(System.in);
 
     // Construtor da classe, que imprime o menu de opcoes do perfil professor.
-    public Professor(Herois herois) {
+    public Professor(Herois herois) throws NumeroInvalidoException {
         do {
             System.out.println("\n           ================================");
             System.out.println("           |     O que deseja fazer?      |");
@@ -26,8 +25,8 @@ public class Professor extends PerfisDeAcesso {
             System.out.println("           |     4 - Alterar Senha        |");
             System.out.println("           |     5 - Voltar.              |");
             System.out.println("           |     0 - Fechar Programa.     |");
-            System.out.printf("           ================================\n>> ");            
-            escolha = scan.nextInt();
+            System.out.printf("           ================================\n>> ");
+            escolha = NumeroInteiro.RetornaNumeroInteiro();
             switch (escolha) {
                 case 1:
                     adicionarAlunos(herois);
@@ -41,45 +40,70 @@ public class Professor extends PerfisDeAcesso {
                 case 4:
                     mudarSenha(herois);
                     break;
-                case 5: {
+                case 5:
                     menuDeAcesso(herois);
                     break;
-                }
+                case 0:
+                    System.out.printf("        |           ** PROGRAMA ENCERRADO **        |\n\n>> ");
+                    System.exit(0);
+                    break;
                 default:
-                    System.out.println("**Escolha uma opcao valida!**");
+                    System.out.println("           |       **Escolha uma opcao valida!**       |");
             }
         } while (escolha != 0);
     }
 
-	// Metodo que adiciona os alunos aos slots de herois.
-    public void adicionarAlunos(Herois herois) {
+    // Metodo que adiciona os alunos aos slots de herois.
+    public void adicionarAlunos(Herois herois) throws NumeroInvalidoException {
         char continua = 'S';
+        boolean imprime = true;
         //Imprime todos os slots de heroi que estao disponiveis ou nao.
         herois.ListaChar();
         while (continua == 'S') {
-            //Cria um perfil de heroi para o aluno.
-            herois.seletor();
-            System.out.printf("Continuar adicionando? S/N\n>> ");            
+            //Cria um perfil de heroi para o aluno, e trata a excecao lancada.            
+            try {
+                herois.seletor();
+            } catch (Exception e) {
+                e.getMessage();
+                imprime = false;
+                break;
+            }
+            
+            System.out.printf("Continuar adicionando? S/N\n>> ");
             continua = (scan.next()).toUpperCase().charAt(0);
         }
-        herois.ListaChar();
+        //imprime caso a excecao nao ocorra.
+        if(imprime)
+            herois.ListaChar();
     }
 
     // Metodo que remove os alunos dos slots de herois.
-    public void removerAlunos(Herois herois) {
+    public void removerAlunos(Herois herois) throws NumeroInvalidoException {
         char continua = 'S';
-
+        boolean imprime = true;
+        
         herois.ListaChar();
         while (continua == 'S') {
-            herois.delete();
+            //Deleta um perfil de heroi do aluno.    
+            try {
+                herois.delete();
+            // trata a excecao caso lancada.
+            } catch (Exception e) {
+                e.getMessage();
+                imprime = false;
+                break;
+            }
+            
             System.out.printf("Continuar removendo? S/N\n>> ");
             continua = (scan.next()).toUpperCase().charAt(0);
         }
-        herois.ListaChar();
+        //imprime caso a excecao nao ocorra.
+        if(imprime)
+            herois.ListaChar();
     }
 
     // Metodo que seleciona o idioma
-    public void selecionarIdioma(Herois herois) {
+    public void selecionarIdioma(Herois herois) throws NumeroInvalidoException {
         
             System.out.println("\n           ================================");
             System.out.println("           |     Escolha o idioma:        |");
@@ -87,40 +111,44 @@ public class Professor extends PerfisDeAcesso {
             System.out.println("           |     1 - Ingles               |");
             System.out.println("           |     2 - Alemao               |");
             System.out.println("           |     3 - Espanhol             |");
-            System.out.println("           |     4 - Frances              |");            
+            System.out.println("           |     4 - Frances              |");
             System.out.println("           |     5 - Voltar.              |");
             System.out.println("           |     0 - Fechar Programa.     |");
             System.out.printf("           ================================\n>> ");
-            escolha = scan.nextInt();
+            escolha = NumeroInteiro.RetornaNumeroInteiro();
             switch (escolha) {
                 case 1:
                     Dicionario.setLingua("ingles");
                     break;
                 case 2:
-                	Dicionario.setLingua("alemao");
+                    Dicionario.setLingua("alemao");
                     break;
                 case 3:
-                	Dicionario.setLingua("espanhol");
+                    Dicionario.setLingua("espanhol");
                     break;
                 case 4:
-                	Dicionario.setLingua("frances");
+                    Dicionario.setLingua("frances");
                     break;
-                case 5: {
+                case 5:
+                    menuDeAcesso(herois);
                     break;
+                case 0:
+                    System.out.printf("        |           ** PROGRAMA ENCERRADO **        |\n\n>> ");
+                    System.exit(0);                    
+                default:{
+                    System.out.println("           |       **Escolha uma opcao valida!**       |");
+                    selecionarIdioma(herois);
                 }
-                default:
-                    System.exit(0);
             }
-            System.out.println("Idioma configurado para \""+Dicionario.getLingua()+"\".");
+            System.out.println("Idioma configurado para \"" + Dicionario.getLingua() + "\".");
         
     }
 
-    // Metodo que remove palavra baseada no idioma escolhido
-    //arrumar....
+    // Metodo que muda a senha inicial do perfil de professor.   
     public void mudarSenha(Herois herois) {
         System.out.println("Digite a nova senha de perfil de acesso de professor:");
         String novaSenha = scan.next();
         acesso = novaSenha;
-	System.out.println("Senha alterada com sucesso!");
+        System.out.println("Senha alterada com sucesso!");
     }
 }

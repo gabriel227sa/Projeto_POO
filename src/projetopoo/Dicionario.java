@@ -7,8 +7,8 @@ package projetopoo;
 
 public class Dicionario {
 
-    //26 palavras. Pode-se adicionar um valor maior
-	private static String lingua = "alemao";
+    //26 palavras. Pode-se adicionar um valor maior, o idioma padrão e alemao.
+    private static String lingua = "alemao";
 
     private Palavra[] dicionario = new Palavra[26];
 

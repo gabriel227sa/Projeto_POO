@@ -17,7 +17,7 @@ public class Aluno extends PerfisDeAcesso {
     private String nomeAluno;
     private boolean fimDeJogo = false;
 
-    public Aluno(Herois herois) {
+    public Aluno(Herois herois) throws NumeroInvalidoException {
         this.scan = new Scanner(System.in);
         do {
             System.out.println("\n           ================================");
@@ -53,7 +53,7 @@ public class Aluno extends PerfisDeAcesso {
         return heroi.verificaAluno(this.nomeAluno);
     }
 
-    public void jogar(Herois herois) {
+    public void jogar(Herois herois) throws NumeroInvalidoException {
         System.out.printf("Digite seu nome: \n>> ");
         nomeAluno = (scan.next()).toLowerCase();
 

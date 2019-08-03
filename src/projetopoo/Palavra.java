@@ -1,4 +1,6 @@
-
+/*
+ * CLASSE QUE DEFINE OS ATRIBUTOS DAS PALAVRAS DO DICIONARIO
+ */
 package projetopoo;
 
 public class Palavra {
@@ -7,13 +9,14 @@ public class Palavra {
 	private String genero;
 	private int dificuldade;
 	
+        //Contrutor que recebe a palavra, a traducao, o genero e a dificuladade.
 	public Palavra(String p, String t, String g, int d){
 		this.palavra = p;
 		this.traducao = t;
 		this.genero = g;
 		this.dificuldade = d;
 	}
-	
+	//metodos get/set dos parametros.
 	public String getPalavra() {
 		return palavra;
 	}
@@ -38,7 +41,8 @@ public class Palavra {
 	public void setDificuldade(int dificuldade) {
 		this.dificuldade = dificuldade;
 	}
-	
+        
+	//imprime a descricao.
 	public void Descricao() {
 		System.out.println(this.getPalavra()+":");
 		System.out.println(this.getTraducao());

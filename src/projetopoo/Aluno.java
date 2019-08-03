@@ -1,7 +1,5 @@
 /*
- *
- *
- *
+ * CLASSE ALUNO, EXIBE OS MENUS E OPÇÕES.
  */
 package projetopoo;
 
@@ -41,7 +39,7 @@ public class Aluno extends PerfisDeAcesso {
                     break;                
                 case 0: 
                     System.out.printf("        |           ** PROGRAMA ENCERRADO **        |\n\n>> ");
-                    break;                
+                    System.exit(0);
                 default:
                     System.out.println("           |       **Escolha uma opcao valida!**       |");
             }
@@ -49,10 +47,12 @@ public class Aluno extends PerfisDeAcesso {
 
     }
 
+    //Metodo que retorna a posicao do alubo no vetor.
     public int jogador(Herois heroi) {
         return heroi.verificaAluno(this.nomeAluno);
     }
 
+    //Metodo para que recebe o aluno e ve se esta cadastrado.
     public void jogar(Herois herois) throws NumeroInvalidoException {
         System.out.printf("Digite seu nome: \n>> ");
         nomeAluno = (scan.next()).toLowerCase();
@@ -67,10 +67,10 @@ public class Aluno extends PerfisDeAcesso {
         }
         combate(herois);
     }
-
+    
+    //Se vaiTerCombate igual a verdadeiro chama os metodos para que ocorra o combate.
     public void combate(Herois herois) {
         if (vaiTerCombate) {
-
             //Gera as palavras e os monstros no combate
             Dicionario dicionario = new Dicionario();
             Bestiario bestiario = new Bestiario();
@@ -104,10 +104,11 @@ public class Aluno extends PerfisDeAcesso {
 
                     }
                 }
-
+                //acaba o jogo
                 if (fimDeJogo) {
                     break;
                 }
+                                
                 if (i >= 4) {
                     rodada++;
                     System.out.println("Parabens! Voce finalizou o ultimo nivel!\n");

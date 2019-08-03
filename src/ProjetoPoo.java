@@ -7,12 +7,9 @@
  *  @authors:
  *  Erick F da Silva 
  *  Gabriel Araujo
- *
- *
  */
 
 
-import java.util.Scanner;
 import projetopoo.*;
 
 public class ProjetoPoo {

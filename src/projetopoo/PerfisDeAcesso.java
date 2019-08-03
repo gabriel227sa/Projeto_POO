@@ -1,5 +1,5 @@
 /*
- * CLASSE DE PERFIS DE ACESSO.
+ * CLASSE DE PERFIS DE ACESSO, EXIBE O MENU INICIAL.
  */
 package projetopoo;
 

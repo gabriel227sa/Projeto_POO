@@ -1,8 +1,5 @@
 /*
  * GERENCIA OS PERFIS DE ALUNO E PROFESSOR, EXIBE OS MENUS CORRESPONDENTES.
- *
- *
- *
  */
 package projetopoo;
 

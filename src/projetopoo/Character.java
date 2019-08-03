@@ -1,9 +1,8 @@
 /*
- * 
+ * CONTEM OS ATRIBUTOS DOS PERSONAGENS DO JOGO.
  */
 
 package projetopoo;
-
 
 //Heranca de monstros. Herois tambem sao monstros por dentro =).
 public class Character extends Monstro { 
@@ -13,30 +12,38 @@ public class Character extends Monstro {
         //Condicao que determina se jogador foi derrotado.
 	private static boolean derrota; 
 	
+        //Construtor padrao que define o nivel e se ocorreu derrota.
 	public Character() {
 		this.nivel = 1;
 		Character.derrota = false;
 	}
-
+        
+        //metodo get para nivel
 	public int getNivel() {
 		return nivel;
 	}
+        
+        //metodo set para nivel
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
 	
+        //metodo get para derrota
 	public static boolean getDerrota() {
 		return derrota;
 	}
 
+        //define se ocorreu a derrota
 	public static void setDerrota(boolean derrota) {
 		Character.derrota = derrota;
 	}
-
+        
+        //retorna o nivel do personagem
 	public int getMaxNivel() {
 		return maxNivel;
 	}
-
+        
+        //muda o nivel maximo
 	public void setMaxNivel(int maxNivel) {
 		this.maxNivel = maxNivel;
 	}

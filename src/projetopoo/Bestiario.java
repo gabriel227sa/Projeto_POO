@@ -1,3 +1,6 @@
+/*
+ * CRIA OS MONSTROS ALEATORIAMENTE, E DEFINE QUAIS ESTARAO NA PARTIDA.
+ */
 
 package projetopoo;
 

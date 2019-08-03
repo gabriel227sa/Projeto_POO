@@ -24,7 +24,7 @@ public class Arena {
 	
 	//Turno do Jogador. Sempre se inicia primeiro, com uma palavra atribuida previamente
 	public void TurnoJogador(Palavra word) {
-		System.out.println("Turno do Jogador!!\n");
+		System.out.println("Acerte as palavras para atacar!!\n");
 		espera(1000);
 		System.out.println("O que significa \""+word.getGenero()+" "+word.getPalavra()+"\"?");
 		System.out.printf(">> ");
@@ -33,7 +33,7 @@ public class Arena {
 		resposta = (scanner.next()).toLowerCase(); 
                 //Caso a palavra esteja correta.
 		if (resposta.equals(word.getTraducao())) { 
-			System.out.println("\nResposta Correta! "+jogador.getNome()+" consegue atingir o inimigo");
+			System.out.println("\nResposta Correta! "+jogador.getNome().toUpperCase()+" consegue atingir o inimigo");
 			espera(1000);
 			dano = jogador.getATK()+((int)Math.random()*10); // Inflige dano ao oponente baseado no ATK
 		}
@@ -50,7 +50,7 @@ public class Arena {
 	
 	//Turno do inimigo. Uma palavra sempre eh atribuida externamente
 	public void TurnoInimigo(Palavra word) {
-		System.out.println("Turno do Inimigo!!\n");
+		System.out.println("Acerte as palavras para se defender!!\n");
 		espera(1000);
 		System.out.println("O que significa \""+word.getGenero()+" "+word.getPalavra()+"\"?");
 		System.out.printf(">> ");
@@ -58,11 +58,11 @@ public class Arena {
 		resposta = (scanner.next()).toLowerCase(); 
 		
 		if (resposta.equals(word.getTraducao())) { //Caso palavra esteja correta
-			System.out.println("\nResposta Correta! "+jogador.getNome()+" consegue desviar do golpe");
+			System.out.println("\nResposta Correta! "+jogador.getNome().toUpperCase()+" consegue desviar do golpe");
 			espera(1000);
 		}
 		else { //Caso a palavra esteja errada
-			System.out.println("\nResposta Errada! "+jogador.getNome()+" foi atingido pelo inimigo");
+			System.out.println("\nResposta Errada! "+jogador.getNome().toUpperCase()+" foi atingido pelo inimigo");
 			espera(1000);
 			dano = inimigo.getATK()+((int)Math.random()*10); //Dano tomado considera ATK do inimigo
 			jogador.tomaDano(dano);
@@ -79,8 +79,6 @@ public class Arena {
 		    Thread.sleep(mili);
 		} catch (InterruptedException e) {
 		    System.err.format("ERRO", e);
-		}
-		
-	}
-	
+		}		
+	}	
 }

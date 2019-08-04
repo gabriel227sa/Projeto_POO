@@ -8,10 +8,10 @@ import java.util.Scanner;
 
 public class Arena {
 	Scanner scanner = new Scanner(System.in);
-	Character jogador; //Atributo que contem jogador participante da Arena
-	Monstro inimigo; //Atributo que contem inimigo participante da Arena
-	int dano; //Variavel para calcular dano infrigido ou tomado pelo jogador
-	String status, resposta;
+	private Character jogador; //Atributo que contem jogador participante da Arena
+	private Monstro inimigo; //Atributo que contem inimigo participante da Arena
+	private int dano; //Variavel para calcular dano infrigido ou tomado pelo jogador
+	private String status, resposta;
 	
 	//Construtor, invoca jogador e inimigo para a arena
 	public Arena(Character j, Monstro m) {

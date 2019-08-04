@@ -7,8 +7,8 @@ package projetopoo;
 //Heranca de monstros. Herois tambem sao monstros por dentro =).
 public class Character extends Monstro { 
         //nivel atual do heroi
-	int nivel; 
-	int maxNivel = 0;
+	private int nivel; 
+	private int maxNivel = 0;
         //Condicao que determina se jogador foi derrotado.
 	private static boolean derrota; 
 	

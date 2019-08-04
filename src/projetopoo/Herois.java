@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Herois {
 
     //Vetor permite guardar 9 herois na classe
-    Character[] herois = new Character[9];
+    private Character[] herois = new Character[9];
     Scanner scanner = new Scanner(System.in);
 
     //Metodo para criacao do personagem
